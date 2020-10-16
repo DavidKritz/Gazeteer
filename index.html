@@ -1,0 +1,149 @@
+﻿<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title>Gazeteer</title>
+	<meta name="author" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="vendors/css/bootstrap431.min.css" rel="stylesheet" />
+	<link href="vendors/css/bootstrap-select.min.css" rel="stylesheet" />
+	<link href="vendors/css/leaflet.css" rel="stylesheet" />
+	<link href="favicon.ico" rel="icon" />
+	<link href="css/style.css" rel="stylesheet" />
+
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand">
+			<img src="images/icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
+			Gazeteer
+		</a>
+		<select onchange="getcCode()" id="country">
+		</select>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<div class="mr-auto"></div>
+			<ul class="navbar-nav my-2 my-lg-0">
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-display="static" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Additional Info
+					</a>
+					<div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdown">
+						<h6 class="dropdown-header">Options</h6>
+						<a class="dropdown-item" id="myBtn1">Wikipedia</a>
+						<a class="dropdown-item" id="myBtn3">Exch Rate</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="modal fade" id="myModal3" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4>Exchange Rates</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					<div class="modal-body">
+						<div id="modal3">
+							Exchange Rates USD vs most popular Currencies:<hr>
+							GBP<p id="gbp" class="curr">1</p></ br>
+							EUR<p id="eur" class="curr">1</p></ br>
+							YEN<p id="yen" class="curr">1</p></ br>
+							RUB<p id="rub" class="curr">1</p></ br>
+							REN<p id="ren" class="curr">1</p>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="myModal1" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4>Visit Wikipedia.com for more info</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					<p id="modal1">
+					</p>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="container">
+		<div id="map">
+		</div>
+
+		<div class="info">
+			<table>
+				<tr>
+					<th>
+						<h4>Country Statistics.</h4>
+					</th>
+				</tr>
+				<tr>
+					<td>
+						Country
+					</td>
+					<td id="countryName">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Capital
+					</td>
+					<td id="capital">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Population
+					</td>
+					<td id="population">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Area in km
+						<sup>2</sup>
+					</td>
+					<td id="area">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Currency
+					</td>
+					<td id="currency">
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div id=”preloader”></div>
+	<script src="vendors/js/jquery-3.5.1.js"></script>
+	<script src="vendors/js/popper.min.js"></script>
+	<script src="vendors/js/bootstrap.min.js"></script>
+	<script src="vendors/js/leaflet.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
